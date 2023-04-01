@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+    .container
+        h1 My blogs
+
+        if deleted
+            p.success-msg Deleted
+        .blog-folder
+            each blog in blogs 
+                .blog-wrapper 
+                    h3.blog(href=`/blogs/${ blog.id }`) #{ blog.title }
+                        p.description #{blog.description}
+                    .blog-buttons 
+                        a.more(href=`/blogs/${ blog.id }`) Read More

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container
+    h1 Update Blog
+
+    if error
+      p.error-msg Error occurred, please try again
+    else if success
+      p.success-msg Blog updated successfully!
+
+    form(method='post', action=`/blogs/${blog.id}/update`)
+      .form-group
+        label(for='title') Title
+        input#title.form-control(type='text' name='title', value=`${blog.title}`, required)
+      .form-group
+        label(for='description') Description
+        input#description.form-control(type='text' name='description', value=`${blog.description}`, required)
+      .form-group
+        label(for='content') Content
+        textarea#content.form-control(name='content', required)= `${blog.content}`
+      button.btn.btn-primary(type='submit') Update Blog

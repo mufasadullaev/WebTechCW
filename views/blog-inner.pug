@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+    .container.inner
+        h3.title #{blog.title}
+        p.description #{blog.description}
+        p.content #{blog.content}
+
+        a.update(href=`/blogs/${ blog.id }/update`) Update
+        a.delete(href=`/blogs/${ blog.id }/delete`) Delete

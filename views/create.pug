@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .container
+    h1 New post
+
+    if error
+        p.error-msg Error! Try again.
+    
+    if success
+        p.success-msg Blog has been posted.
+
+    form(action="/create", method="POST")
+      .form-group
+        label(for="title") Title
+        input#title.form-control(type="text", name="title", required)
+      .form-group
+        label(for="description") Description
+        input#description.form-control(type="text", name="description", required)
+      .form-group
+        label(for="content") Content
+        textarea#content.form-control(name="content", rows="5", required)
+      button.btn.btn-primary(type="submit") Create Post
