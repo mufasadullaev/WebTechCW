@@ -5,18 +5,19 @@ V-Shape blog application was created to post gym blogs and advices on exercising
 
 ### Instructions on running the app
 Users can run the application by following these instructions:
-
-1. Install dependencies
+1. Clone project
+```bash
+git clone https://github.com/mufasadullaev/WebTechCW.git
+```
+2. Install dependencies
 ```bash
 cd external
 npm install
 ```
-2. Run the application
+3. Run the application
 ```bash
 node app
 ```
 ### Dependencies
 - express.js
 - pug.js
-
-### Link to app demo on Glitch
